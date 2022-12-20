@@ -1,0 +1,34 @@
+{% extends 'post/home.html' %}
+
+{% block content %}
+<div class="col-6">
+
+    <form action="" method="post">
+        {% csrf_token %}
+            {% for forms in form %}
+           <div class="tag">
+    
+               {{forms.label_tag}}
+           </div>
+           <div class="input">
+    
+               {{forms}}
+           </div>
+           <div class="errors">
+            {{forms.errors|striptags}}
+           </div>
+            
+    
+            {% endfor %}
+            <input type="submit" value="submit">
+        </form>
+        {% if messages %}
+        {% for message in messages %}
+        <small {% if message.tags %} class="{{message.tags}}" {% endif %}>
+            {{message}} 
+        </small>
+        {% endfor %}
+        {% endif %}
+</div>
+    
+{% endblock content %}

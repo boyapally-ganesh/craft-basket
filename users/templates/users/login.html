@@ -1,0 +1,21 @@
+{% extends 'post/home.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" class="btn btn-group-lg">
+    </form>
+    <div class="col-6">
+    
+    
+    </div>
+
+
+
+	
+
+{% endblock content %}

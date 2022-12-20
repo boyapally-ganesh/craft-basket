@@ -1,0 +1,17 @@
+{% extends 'post/home.html' %}
+
+{% block content %}
+<!--
+
+
+  
+-->
+<h1>{{post.title}}</h1><span>{{post.authour}}</span>
+<p>{{post.body}}</p>
+<form action="" method="post">
+    {% csrf_token %}
+  <button  value="delete" class="btn btn-primary">delete</button>
+</form>
+
+
+{% endblock content %}

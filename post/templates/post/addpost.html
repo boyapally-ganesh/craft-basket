@@ -1,0 +1,18 @@
+{% extends 'post/home.html' %}
+
+{% block content %}
+<div class="container">
+
+    <form action="" method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+       {{form.media}}
+      {{form.as_p}}
+      <input type="submit" value="submit" class="btn btn-primary">
+    </form>
+</div>
+<script>
+  var name = '{{user.id}}';
+  document.getElementById('elder').value = name;
+</script>
+        
+{% endblock %}

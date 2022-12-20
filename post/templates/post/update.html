@@ -1,0 +1,25 @@
+{% extends 'post/home.html' %}
+
+{% block content %}
+<div class="container">
+ 
+ {% if user.is_authenticated %}
+     
+ {% if user.id == post.authour.id %}
+                
+ <form action="" method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <input type="submit" value="update" class="btn btn-primary">
+ </form>
+ {% else %}
+ <h1>sorry you dont have ani permision</h1>
+ {% endif %}
+ {% else %}
+ <h1>sory u dont have ani permission </h1>
+ {% endif %}
+    
+
+</div>
+        
+{% endblock content %}

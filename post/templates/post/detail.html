@@ -1,0 +1,23 @@
+{% extends 'post/home.html' %}
+{% block content %}
+<!--
+        
+-->
+        <h1>{{post.title}}</h1><span>{{post.authour}}</span>
+        <p>{{post.body|safe}}</p>
+        <p>{{post.post_date}}</p>
+        <p>{{post.post_time}}</p>
+        
+        {% if user.is_authenticated %}
+            
+            {% if user.id == post.authour.id %}
+                
+               <a href="{% url 'update' post.pk %}">update</a>
+               <a href="{% url 'delete' post.pk %}">delete</a>
+            {% endif %}
+                
+                
+        {% endif %}
+   
+
+{% endblock content %}
